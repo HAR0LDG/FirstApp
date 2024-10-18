@@ -2,6 +2,7 @@ package com.haroldg.firstapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -30,6 +31,7 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, SaludoActivity::class.java)
             intent.putExtra("EXTRA-NAME", name)
             startActivity(intent)
+            Log.i("haroldg","Btn pulsado $name")
         }
     }
 
