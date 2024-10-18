@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.haroldg.firstapp.HomeActivity
+import com.haroldg.firstapp.IMC_Calculator.IMCActivity
 import com.haroldg.firstapp.R
 import com.haroldg.firstapp.SaludoActivity
 
@@ -23,9 +24,20 @@ class MenuActivity : AppCompatActivity() {
         }
 
         val btnSaludar = findViewById<Button>(R.id.btnSaludar)
+        val btnIMC = findViewById<Button>(R.id.btnIMC)
+
         btnSaludar.setOnClickListener{
             navigateToSaludoApp()
         }
+
+        btnIMC.setOnClickListener{
+            navigateToIMC()
+        }
+    }
+
+    private fun navigateToIMC() {
+        val intent = Intent(this,IMCActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToSaludoApp(){
