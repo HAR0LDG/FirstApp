@@ -4,4 +4,6 @@
     <string name="hombre">Hombre</string>
     <string name="mujer">mujer</string>
     <string name="femaleicon">femaleicon</string>
+    <string name="altura">Altura</string>
+    <string name="valorAltura">120 cm</string>
 </resources>

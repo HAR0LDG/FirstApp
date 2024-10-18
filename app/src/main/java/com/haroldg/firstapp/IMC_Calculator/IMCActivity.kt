@@ -1,12 +1,17 @@
 package com.haroldg.firstapp.IMC_Calculator
 
+import android.icu.text.DecimalFormat
+import android.os.Build
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.slider.RangeSlider
 import com.haroldg.firstapp.R
 
 class IMCActivity : AppCompatActivity() {
@@ -15,7 +20,10 @@ class IMCActivity : AppCompatActivity() {
     private var isFemaleSelected: Boolean = false
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
+    private lateinit var valAlt:TextView
+    private lateinit var _slider:RangeSlider
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,8 +42,11 @@ class IMCActivity : AppCompatActivity() {
     private fun initComponents() {
         viewMale = findViewById(R.id.viewMale)
         viewFemale = findViewById(R.id.viewFemale)
+        valAlt = findViewById(R.id.valorAlt)
+        _slider = findViewById(R.id.slider)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun initListeners() {
         viewMale.setOnClickListener {
             changeGender(true)
@@ -44,6 +55,11 @@ class IMCActivity : AppCompatActivity() {
         viewFemale.setOnClickListener {
             changeGender(false)
             setGenderColor()
+        }
+        _slider.addOnChangeListener{_,value,_ ->
+            val df = DecimalFormat("#.##")
+            val result = df.format(value)
+            valAlt.text = String.format("%s cm", result)
         }
     }
 

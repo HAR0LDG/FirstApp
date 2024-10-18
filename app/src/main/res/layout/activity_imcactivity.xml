@@ -37,7 +37,7 @@
             android:layout_gravity="center">
 
             <ImageView
-                android:layout_width="60dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:contentDescription="@string/maleicon"
                 android:src="@drawable/ic_male"
@@ -49,6 +49,8 @@
                 android:text="@string/hombre"
                 android:textAllCaps="true"
                 android:textColor="@color/tiitle_text"
+                android:textStyle="bold"
+                android:textSize="15sp"
                 android:layout_marginTop="8dp"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -86,9 +88,59 @@
                 android:text="@string/mujer"
                 android:textAllCaps="true"
                 android:textColor="@color/tiitle_text"
+                android:textStyle="bold"
+                android:textSize="15sp"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="7dp"/>
+                android:layout_marginStart="5dp"/>
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/alturaView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/background_component"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintStart_toStartOf="@+id/viewMale"
+        app:layout_constraintEnd_toEndOf="@+id/viewFemale"
+        app:layout_constraintTop_toBottomOf="@+id/viewMale">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/altura"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/tiitle_text"
+                />
+
+            <TextView
+                android:id="@+id/valorAlt"
+                android:text="@string/valorAltura"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.cardview.widget.CardView>
