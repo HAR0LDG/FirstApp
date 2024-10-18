@@ -2,12 +2,10 @@ package com.haroldg.firstapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -24,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
 
     val boton = findViewById<AppCompatButton>(R.id.boton)
     val campo_Texto = findViewById<AppCompatEditText>(R.id.textfield)
-    var titulo = findViewById<AppCompatTextView>(R.id.titulo)
+
 
     boton.setOnClickListener{
         val name = campo_Texto.text.toString()
