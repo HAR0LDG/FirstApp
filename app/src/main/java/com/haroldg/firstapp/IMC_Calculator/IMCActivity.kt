@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import com.haroldg.firstapp.R
 
@@ -18,10 +19,19 @@ class IMCActivity : AppCompatActivity() {
 
     private var isMaleSelected: Boolean = true
     private var isFemaleSelected: Boolean = false
+    private var defaultPeso:Int = 50
+    private var defaultEdad:Int = 18
+
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
     private lateinit var valAlt:TextView
     private lateinit var _slider:RangeSlider
+    private lateinit var btnMenosPeso: FloatingActionButton
+    private lateinit var  btnMasPeso:FloatingActionButton
+    private lateinit var txtPeso:TextView
+    private lateinit var btnMenosEdad:FloatingActionButton
+    private lateinit var btnMasEdad:FloatingActionButton
+    private lateinit var txtEdad:TextView
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +54,12 @@ class IMCActivity : AppCompatActivity() {
         viewFemale = findViewById(R.id.viewFemale)
         valAlt = findViewById(R.id.valorAlt)
         _slider = findViewById(R.id.slider)
+        txtPeso = findViewById(R.id.valPeso)
+        btnMenosPeso = findViewById(R.id.btnMenosPeso)
+        btnMasPeso = findViewById(R.id.btnMasPeso)
+        txtEdad = findViewById(R.id.valEdad)
+        btnMenosEdad = findViewById(R.id.btnMenosEdad)
+        btnMasEdad = findViewById(R.id.btnMasEdad)
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -61,7 +77,24 @@ class IMCActivity : AppCompatActivity() {
             val result = df.format(value)
             valAlt.text = String.format("%s cm", result)
         }
+        btnMenosPeso.setOnClickListener{
+            defaultPeso --
+            setPeso()
+        }
+        btnMasPeso.setOnClickListener{
+            defaultPeso++
+            setPeso()
+        }
+        btnMenosEdad.setOnClickListener{
+            defaultEdad --
+            setEdad()
+        }
+        btnMasEdad.setOnClickListener{
+            defaultEdad ++
+            setEdad()
+        }
     }
+
 
     private fun changeGender(isMale: Boolean) {
         if (isMale) {
@@ -87,8 +120,17 @@ class IMCActivity : AppCompatActivity() {
         return ContextCompat.getColor(this, colorReference)
     }
 
-    private fun initUI() {
+    private fun setPeso(){
+        txtPeso.text = getString(R.string.peso_text, defaultPeso)
+    }
 
+    private fun setEdad() {
+        txtEdad.text = getString(R.string.edad_text, defaultEdad)
+    }
+
+    private fun initUI() {
+        setGenderColor()
+        setPeso()
     }
 
 }

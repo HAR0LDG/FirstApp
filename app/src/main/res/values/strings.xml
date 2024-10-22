@@ -6,4 +6,14 @@
     <string name="femaleicon">femaleicon</string>
     <string name="altura">Altura</string>
     <string name="valorAltura">120 cm</string>
+    <string name="peso">peso</string>
+    <string name="edad">edad</string>
+    <string name="peso_text">%1$d kg</string>
+    <string name="edad_text">%1$d años</string>
+    <string name="ValorEdad">18 años</string>
+    <string name="menosEdad">menosEdad</string>
+    <string name="masEdad">masEdad</string>
+    <string name="txtValPeso">50 kg</string>
+    <string name="menosPeso">menosPeso</string>
+    <string name="masPeso">masPeso</string>
 </resources>
