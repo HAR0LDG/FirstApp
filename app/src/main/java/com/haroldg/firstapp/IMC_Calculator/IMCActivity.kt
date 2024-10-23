@@ -130,10 +130,30 @@ class IMCActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.N)
     private fun calcular() {
+
         val alturaEnMetros = defaultAltura / 100.0  // Convertir a metros
         imc = (defaultPeso / (alturaEnMetros * alturaEnMetros)).toFloat()
         val df = DecimalFormat("#.##")
-        val resultado = df.format(imc)
+        var resultado = df.format(imc)
+        val flecha = "\u2192"
+
+        resultado = when(imc){
+            in 18.51..24.49 ->{
+                "$resultado $flecha Peso normal"
+            }
+
+            in 25.00..29.99->{
+                "$resultado $flecha Sobrepeso"
+            }
+
+            in 30.00..99.00 ->{
+                "$resultado $flecha Obesidad"
+            }
+
+            else ->{
+                "$resultado $flecha Bajo peso"
+            }
+        }
         txtResultado.text = resultado
         viewResultado.isVisible = true
         Log.i("haroldg", "Tu IMC es ${df.format(imc)}")
