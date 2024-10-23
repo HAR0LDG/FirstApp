@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="30dp"
         app:cardCornerRadius="16dp"
         app:cardBackgroundColor="@color/background_component_selected"
@@ -46,7 +46,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="@string/hombre"
                 android:textAllCaps="true"
                 android:textColor="@color/tiitle_text"
@@ -63,7 +63,7 @@
         android:id="@+id/viewFemale"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
         app:cardCornerRadius="16dp"
         app:cardBackgroundColor="@color/background_component"
@@ -195,23 +195,24 @@
                     android:id="@+id/btnMenosPeso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
                     android:contentDescription="@string/menosPeso"
                     android:src="@drawable/subtract"
                     app:tint="@color/white"
-                    android:layout_marginEnd="5dp"/>
+                    android:layout_marginEnd="5dp"
+                    app:backgroundTint="@color/purple_500"
+                    />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnMasPeso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
                     android:contentDescription="@string/masPeso"
                     android:scaleType="center"
                     android:src="@drawable/add_symbol"
                     app:tint="@color/white"
                     android:layout_marginStart="5dp"
-                   />
+                    app:backgroundTint="@color/purple_500"
+                    />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -266,7 +267,7 @@
                     android:id="@+id/btnMenosEdad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
+                    app:backgroundTint="@color/purple_500"
                     android:contentDescription="@string/menosEdad"
                     android:src="@drawable/subtract"
                     app:tint="@color/white"
@@ -276,12 +277,12 @@
                     android:id="@+id/btnMasEdad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
                     android:contentDescription="@string/masEdad"
                     android:scaleType="center"
                     android:src="@drawable/add_symbol"
                     app:tint="@color/white"
                     android:layout_marginStart="5dp"
+                    app:backgroundTint="@color/purple_500"
                     />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
