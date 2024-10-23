@@ -16,4 +16,7 @@
     <string name="txtValPeso">50 kg</string>
     <string name="menosPeso">menosPeso</string>
     <string name="masPeso">masPeso</string>
+    <string name="calcular">Calcular</string>
+    <string name="txtIMC">Tu IMC es</string>
+    <string name="txtResultado">resultado</string>
 </resources>

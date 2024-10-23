@@ -3,6 +3,8 @@ package com.haroldg.firstapp.IMC_Calculator
 import android.icu.text.DecimalFormat
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -11,6 +13,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import com.haroldg.firstapp.R
@@ -21,6 +24,8 @@ class IMCActivity : AppCompatActivity() {
     private var isFemaleSelected: Boolean = false
     private var defaultPeso:Int = 50
     private var defaultEdad:Int = 18
+    private var imc:Float= 0.0F
+    private var defaultAltura:Int = 120
 
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
@@ -32,6 +37,9 @@ class IMCActivity : AppCompatActivity() {
     private lateinit var btnMenosEdad:FloatingActionButton
     private lateinit var btnMasEdad:FloatingActionButton
     private lateinit var txtEdad:TextView
+    private lateinit var btnCalcular:Button
+    private lateinit var viewResultado:CardView
+    private lateinit var txtResultado:TextView
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +68,9 @@ class IMCActivity : AppCompatActivity() {
         txtEdad = findViewById(R.id.valEdad)
         btnMenosEdad = findViewById(R.id.btnMenosEdad)
         btnMasEdad = findViewById(R.id.btnMasEdad)
+        btnCalcular = findViewById(R.id.btnCalcular)
+        viewResultado = findViewById(R.id.viewResultado)
+        txtResultado = findViewById(R.id.resultadoIMC)
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -72,29 +83,61 @@ class IMCActivity : AppCompatActivity() {
             changeGender(false)
             setGenderColor()
         }
-        _slider.addOnChangeListener{_,value,_ ->
-            val df = DecimalFormat("#.##")
-            val result = df.format(value)
-            valAlt.text = String.format("%s cm", result)
+        _slider.addOnChangeListener { _, value, _ ->
+            updateAltura(value)
         }
-        btnMenosPeso.setOnClickListener{
-            defaultPeso --
-            setPeso()
+        btnMenosPeso.setOnClickListener {
+            updatePeso(defaultPeso - 1)
         }
-        btnMasPeso.setOnClickListener{
-            defaultPeso++
-            setPeso()
+        btnMasPeso.setOnClickListener {
+            updatePeso(defaultPeso + 1)
         }
-        btnMenosEdad.setOnClickListener{
-            defaultEdad --
-            setEdad()
+        btnMenosEdad.setOnClickListener {
+            updateEdad(defaultEdad - 1)
         }
-        btnMasEdad.setOnClickListener{
-            defaultEdad ++
-            setEdad()
+        btnMasEdad.setOnClickListener {
+            updateEdad(defaultEdad + 1)
+        }
+        btnCalcular.setOnClickListener {
+            calcular()
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun updateAltura(value: Float) {
+        val df = DecimalFormat("#.##")
+        defaultAltura = df.format(value).toInt()
+        valAlt.text = String.format("%s cm", defaultAltura)
+        reset()
+    }
+
+    private fun updatePeso(nuevoPeso: Int) {
+        defaultPeso = nuevoPeso
+        setPeso()
+        reset()
+    }
+
+    private fun updateEdad(nuevaEdad: Int) {
+        defaultEdad = nuevaEdad
+        setEdad()
+        reset()
+    }
+
+    private fun reset() {
+        viewResultado.isVisible = false
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun calcular() {
+        val alturaEnMetros = defaultAltura / 100.0  // Convertir a metros
+        imc = (defaultPeso / (alturaEnMetros * alturaEnMetros)).toFloat()
+        val df = DecimalFormat("#.##")
+        val resultado = df.format(imc)
+        txtResultado.text = resultado
+        viewResultado.isVisible = true
+        Log.i("haroldg", "Tu IMC es ${df.format(imc)}")
+    }
 
     private fun changeGender(isMale: Boolean) {
         if (isMale) {
