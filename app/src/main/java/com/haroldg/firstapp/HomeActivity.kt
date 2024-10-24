@@ -32,9 +32,7 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("EXTRA-NAME", name)
             startActivity(intent)
             Log.i("haroldg","Btn pulsado $name")
+            }
         }
-    }
-
-
     }
 }
