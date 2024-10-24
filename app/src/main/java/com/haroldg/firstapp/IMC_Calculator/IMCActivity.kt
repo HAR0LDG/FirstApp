@@ -138,6 +138,9 @@ class IMCActivity : AppCompatActivity() {
         val flecha = "\u2192"
 
         resultado = when(imc){
+            in 0.00..18.50 ->{
+                "$resultado $flecha Bajo peso"
+            }
             in 18.51..24.49 ->{
                 "$resultado $flecha Peso normal"
             }
@@ -149,9 +152,8 @@ class IMCActivity : AppCompatActivity() {
             in 30.00..99.00 ->{
                 "$resultado $flecha Obesidad"
             }
-
             else ->{
-                "$resultado $flecha Bajo peso"
+                "Error"
             }
         }
         txtResultado.text = resultado

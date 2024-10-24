@@ -306,11 +306,12 @@
         android:textAllCaps="false"
         android:background="@drawable/rounded_button"/>
 
+    <!--RESULTADO-->
     <androidx.cardview.widget.CardView
         android:id="@+id/viewResultado"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@+id/btnCalcular"
         app:layout_constraintStart_toStartOf="@+id/btnCalcular"
         app:layout_constraintEnd_toEndOf="@+id/btnCalcular"
