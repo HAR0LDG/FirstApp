@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.haroldg.firstapp.HomeActivity
 import com.haroldg.firstapp.IMC_Calculator.IMCActivity
 import com.haroldg.firstapp.R
-import com.haroldg.firstapp.SaludoActivity
+import com.haroldg.firstapp.ListaApp.ListaAppActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +25,7 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaludar = findViewById<Button>(R.id.btnSaludar)
         val btnIMC = findViewById<Button>(R.id.btnIMC)
+        val btnLista = findViewById<Button>(R.id.btnListaAPP)
 
         btnSaludar.setOnClickListener{
             navigateToSaludoApp()
@@ -33,6 +34,15 @@ class MenuActivity : AppCompatActivity() {
         btnIMC.setOnClickListener{
             navigateToIMC()
         }
+
+        btnLista.setOnClickListener{
+            navigateToListaApp()
+        }
+    }
+
+    private fun navigateToListaApp() {
+        val intent = Intent(this,ListaAppActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToIMC() {

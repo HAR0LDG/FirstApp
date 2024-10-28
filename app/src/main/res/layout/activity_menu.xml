@@ -21,4 +21,11 @@
         android:layout_height="wrap_content"
         android:text="IMC APP"
         android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/btnListaAPP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista APP"
+        android:layout_marginTop="5dp"/>
 </LinearLayout>

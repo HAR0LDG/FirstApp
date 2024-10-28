@@ -19,4 +19,6 @@
     <string name="calcular">Calcular</string>
     <string name="txtIMC">Tu IMC</string>
     <string name="txtResultado">resultado</string>
+    <string name="titulo_lista_app">Lista de Tareas</string>
+    <string name="txtPrueba">Prueba</string>
 </resources>
