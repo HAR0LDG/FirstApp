@@ -1,5 +1,6 @@
 package com.haroldg.firstapp.ListaApp
 
+import android.annotation.SuppressLint
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -11,6 +12,7 @@ class CategoriesViewHolder(view:View):RecyclerView.ViewHolder(view) {
     private val txtCategoryName:TextView = view.findViewById(R.id.txtCategoryName)
     private val divider:View = view.findViewById(R.id.divisor)
 
+    @SuppressLint("SetTextI18n")
     fun render(taskCategory: TaskCategory){
 
         when(taskCategory){

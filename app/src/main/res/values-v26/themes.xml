@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ListaAppSubtitle">
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/subtilte_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginHorizontal">32dp</item>
+    </style>
+</resources>

@@ -21,4 +21,6 @@
     <string name="txtResultado">resultado</string>
     <string name="titulo_lista_app">Lista de Tareas</string>
     <string name="txtPrueba">Prueba</string>
+    <string name="txtCategorias">categorías</string>
+    <string name="txtTareas">Tareas</string>
 </resources>

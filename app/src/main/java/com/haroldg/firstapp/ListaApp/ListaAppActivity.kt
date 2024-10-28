@@ -7,18 +7,27 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.haroldg.firstapp.ListaApp.TaskCategory.*
 import com.haroldg.firstapp.R
 
 class ListaAppActivity : AppCompatActivity() {
 
     private val categories =listOf(
-        TaskCategory.Business,
-        TaskCategory.Personal,
-        TaskCategory.Other
+        Business,
+        Personal,
+        Other
+    )
+
+    private val tasks = mutableListOf(
+        Task(name = "PruebaBusiness", Business),
+        Task(name = "PruebaPersonal", Personal),
+        Task(name = "PruebaOtros", Other)
     )
 
     private lateinit var rvCategory:RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
+    private lateinit var rvTasks:RecyclerView
+    private lateinit var tasksAdapter:TasksAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +44,16 @@ class ListaAppActivity : AppCompatActivity() {
 
     private fun initComponent() {
         rvCategory = findViewById(R.id.rvCategories)
+        rvTasks = findViewById(R.id.rvTasks)
     }
 
     private fun initUI(){
         categoriesAdapter = CategoriesAdapter(categories)
         rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategory.adapter = categoriesAdapter
+
+        tasksAdapter = TasksAdapter(tasks)
+        rvTasks.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        rvTasks.adapter = tasksAdapter
     }
 }
