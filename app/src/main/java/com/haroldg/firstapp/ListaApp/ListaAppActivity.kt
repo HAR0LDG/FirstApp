@@ -27,9 +27,9 @@ class ListaAppActivity : AppCompatActivity() {
     )
 
     private val tasks = mutableListOf(
-        Task(name = "PruebaBusiness", Business),
-        Task(name = "PruebaPersonal", Personal),
-        Task(name = "PruebaOtros", Other)
+        Task(name = "Business Task", Business),
+        Task(name = "Personal Task", Personal),
+        Task(name = "Other Task", Other)
     )
 
     private lateinit var rvCategory: RecyclerView
