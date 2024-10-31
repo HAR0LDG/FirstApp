@@ -104,7 +104,7 @@ class ListaAppActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories){updateCategories(it)}
         rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategory.adapter = categoriesAdapter
 
@@ -116,7 +116,16 @@ class ListaAppActivity : AppCompatActivity() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun updateTasks(){
+        val selectedCategories:List<TaskCategory> = categories.filter { it.isSelected }
+        val newTask = tasks.filter {selectedCategories.contains(it.category)}
+        tasksAdapter.tasks = newTask
         tasksAdapter.notifyDataSetChanged()
+    }
+
+    private fun updateCategories(position: Int){
+       categories[position].isSelected = !categories[position].isSelected
+       categoriesAdapter.notifyItemChanged(position)
+        updateTasks()
     }
 
     private fun onItemSelected(position:Int){
