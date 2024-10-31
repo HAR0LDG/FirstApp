@@ -20,7 +20,7 @@
     <string name="txtIMC">Tu IMC</string>
     <string name="txtResultado">resultado</string>
 
-<!--    Lista App-->
+    <!--    Lista App-->
     <string name="titulo_lista_app">Lista de Tareas</string>
     <string name="txtPrueba">Prueba</string>
     <string name="txtCategorias">categorías</string>
