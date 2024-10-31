@@ -4,14 +4,23 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-10-22T02:07:23.783140300Z">
+        <DropdownSelection timestamp="2024-10-29T00:53:52.644565800Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\haes_\.android\avd\Pixel_8_Pro_API.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=R58M91DMH8D" />
             </handle>
           </Target>
         </DropdownSelection>
         <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="ListaAppActivityTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="ListaAppActivityInstrumentalTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="MenuActivityInstrumentalTest">
+        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>

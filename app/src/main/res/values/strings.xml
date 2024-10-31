@@ -19,4 +19,17 @@
     <string name="calcular">Calcular</string>
     <string name="txtIMC">Tu IMC</string>
     <string name="txtResultado">resultado</string>
+
+<!--    Lista App-->
+    <string name="titulo_lista_app">Lista de Tareas</string>
+    <string name="txtPrueba">Prueba</string>
+    <string name="txtCategorias">categorías</string>
+    <string name="txtTareas">Tareas</string>
+    <string name="add">add</string>
+    <string name="hintTxt">Añade la tarea</string>
+    <string name="labelRadioBusiness">Negocios</string>
+    <string name="labelRadioPersonal">Personal</string>
+    <string name="labelRadioOtros">Otros</string>
+    <string name="btnName">Guardar</string>
+    <string name="msgToast">Por favor escribe una tarea</string>
 </resources>

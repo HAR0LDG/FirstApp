@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:background="@color/background_lista_app"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edTextTask"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:inputType="text"
+        android:backgroundTint="@color/white"
+        android:hint="@string/hintTxt"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:focusableInTouchMode="true"
+        android:importantForAutofill="no"
+        />
+
+    <RadioGroup
+        android:id="@+id/rgCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/business_category"
+            android:checked="true"
+            android:text="@string/labelRadioBusiness"
+            android:textSize="16sp"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/personal_category"
+            android:text="@string/labelRadioPersonal"
+            android:textSize="16sp"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rdOtros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/other_category"
+            android:text="@string/labelRadioOtros"
+            android:textSize="16sp"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAgregarTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/accent"
+        android:text="@string/btnName"
+        android:textAllCaps="false"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>
